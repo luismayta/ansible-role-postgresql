@@ -1,0 +1,16 @@
+---
+
+# vars file for postgresql
+
+_postgresql_dependences:
+  - apt-transport-https
+  - acl
+  - python-psycopg2
+  - python-software-properties
+  - software-properties-common
+
+_postgresql_dependences_postgis:
+  - libgeos-c1
+  - postgis
+  - postgresql-{{postgresql_version}}-postgis-2.3
+  - postgresql-{{postgresql_version}}-pgrouting
