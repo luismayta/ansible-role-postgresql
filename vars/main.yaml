@@ -12,3 +12,5 @@ _postgresql_dependences:
 _postgresql_dependences_postgis:
   - libgeos-c1
   - postgis
+  - postgresql-{{postgresql_version}}-postgis-2.3
+  - postgresql-{{postgresql_version}}-pgrouting
