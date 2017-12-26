@@ -36,9 +36,8 @@ Role Variables
 
 The default role variables in ``defaults/main.yml`` are:
 
-::
+.. code-block:: yaml
 
-    ```yaml
     # PostgreSQL
     postgresql_version: 9.4
     postgresql_listen_addresses:
@@ -54,7 +53,13 @@ The default role variables in ``defaults/main.yml`` are:
         password: 'P@ssw0rd'
         priv: ALL
         role_attr_flags: SUPERUSER
-    ```
+
+
+Enabled Postgis
+
+.. code-block:: bash
+
+    postgresql_postgis: yes
 
 Dependencies
 ------------
@@ -69,7 +74,7 @@ See the `examples <./examples/>`__ directory.
 To run this playbook with default settings, create a basic playbook like
 this:
 
-::
+.. code-block:: yaml
 
     - hosts: servers
       roles:
@@ -77,7 +82,7 @@ this:
 
 To install a specific version:
 
-::
+.. code-block:: yaml
 
     - hosts: servers
       roles:
