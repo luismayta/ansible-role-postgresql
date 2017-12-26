@@ -1,0 +1,8 @@
+---
+
+- include: dependences.yaml
+- include: install.yaml
+- include: extensions.yaml
+- include: configure.yaml
+- include: databases.yaml
+- include: users.yaml
