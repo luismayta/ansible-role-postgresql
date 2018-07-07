@@ -10,7 +10,8 @@ _postgresql_dependences:
   - software-properties-common
 
 _postgresql_dependences_postgis:
-  - libgeos-c1
+  - libgeos-3.5.0
+  - libgeos-dev
   - postgis
-  - postgresql-{{postgresql_version}}-postgis-2.3
+  - postgresql-{{postgresql_version}}-postgis-2.4
   - postgresql-{{postgresql_version}}-pgrouting

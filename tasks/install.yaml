@@ -19,7 +19,7 @@
     - ansible_os_family == 'Debian'
   become: true
   apt_repository:
-    repo: "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main"
+    repo: "deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main"
   tags:
     - postgresql
     - db
@@ -29,11 +29,9 @@
   when:
     - ansible_os_family == 'Debian'
   become: true
-  apt:
+  package:
     name: "postgresql-{{postgresql_version}}"
     state: present
-    update_cache: true
-    cache_valid_time: 3600
   notify: restart postgresql
   tags:
     - postgresql
