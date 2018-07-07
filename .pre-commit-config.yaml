@@ -1,5 +1,5 @@
 -   repo: https://github.com/pre-commit/pre-commit-hooks.git
-    sha: v1.1.1
+    sha: v1.3.0
     hooks:
     -   id: detect-private-key
         files: ^(?!\.?git-crypt)
@@ -35,6 +35,7 @@
     -   id: requirements-txt-fixer
     -   id: check-symlinks
     -   id: name-tests-test
+        exclude: (src/tests/steps/*)
         args:
         - --django
     -   id: file-contents-sorter
@@ -47,27 +48,10 @@
         - --diff
         - --exclude=docs,migrations
     -   id: check-executables-have-shebangs
--   repo: https://github.com/pre-commit/mirrors-pylint.git
-    sha: v1.7.4
-    hooks:
-    -   id: pylint
-        language_version: python3
-        exclude: ^migrations/.*\.py$
-        args:
-        - --rcfile=.pylintrc
-        - --disable=no-name-in-module,import-error
-        - --ignore=settings_test, migrations
 -   repo: https://github.com/pre-commit/pre-commit.git
-    sha: v1.4.1
+    sha: v1.10.2
     hooks:
     -   id: validate_manifest
--   repo: git://github.com/FalconSocial/pre-commit-python-sorter
-    sha: 1.0.4
-    hooks:
-    -   id: python-import-sorter
-        args:
-        - --silent-overwrite
-        language_version: python3
 -   repo: https://github.com/detailyang/pre-commit-shell.git
     sha: 1.0.2
     hooks:
@@ -92,18 +76,35 @@
 -   repo: https://github.com/Lucas-C/pre-commit-hooks-nodejs
     sha: v1.1.0
     hooks:
-    -   id: dockerfile_lint
     -   id: markdown-toc
 -   repo: git://github.com/Lucas-C/pre-commit-hooks-markup
     sha: v1.0.0
     hooks:
     -   id: rst-linter
         exclude: (docs/*|tests/*)
--   repo: https://github.com/asottile/pyupgrade
-    sha: v1.2.0
-    hooks:
-    -   id: pyupgrade
 -   repo: https://github.com/pricematch/pricematch-pre-commit-hooks
     sha: 82b0c142b363547cc873bc6581fa3074087a37d2
     hooks:
     -   id: do_not_commit
+-   repo: git://github.com/luismayta/pre-commit-isort
+    sha: 1.0.1
+    hooks:
+    -   id: isort
+        exclude: __pycache__|migrations|_build|.tox|pootle/static|pootle/translations|pootle/locale|pootle/assets|templates
+        args:
+        - --settings-path=.isort.cfg
+-   repo: https://github.com/pre-commit/mirrors-pylint.git
+    sha: v1.8.3
+    hooks:
+    -   id: pylint
+        exclude: __pycache__|migrations|conf.py|_build|.tox|pootle/static|pootle/translations|pootle/locale|pootle/assets|templates
+        args:
+        - --rcfile=.pylintrc
+        - --disable=no-name-in-module,import-error,ungrouped-imports
+        - --ignore=settings_test, migrations
+-   repo: https://github.com/luismayta/pre-commit-mypy.git
+    sha: 0.1.1
+    hooks:
+    -   id: mypy
+        args:
+        - --ignore-missing-imports
