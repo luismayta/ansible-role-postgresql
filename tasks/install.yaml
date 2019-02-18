@@ -30,7 +30,7 @@
     - ansible_os_family == 'Debian'
   become: true
   package:
-    name: "postgresql-{{postgresql_version}}"
+    name: "postgresql-{{ postgresql_version }}"
     state: present
   notify: restart postgresql
   tags:

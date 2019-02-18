@@ -3,7 +3,7 @@
 - name: Install Dependences PostgreSQL
   become: true
   package:
-    name: "{{item}}"
+    name: "{{ item }}"
     state: present
   with_items: "{{ _postgresql_dependences | default([]) }}"
   when:

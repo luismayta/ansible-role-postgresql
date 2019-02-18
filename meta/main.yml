@@ -15,8 +15,7 @@ galaxy_info:
         - saucy    # 13.10
         - trusty   # 14.04
 
-  categories:
-    - database
-    - database:sql
+categories:
+  - database
 
 dependencies: []
