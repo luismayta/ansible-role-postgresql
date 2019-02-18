@@ -2,40 +2,13 @@
 # https://docs.docker.com/compose/
 #
 # Usage: test up
-version: '3'
+
+version: "3"
 services:
-
-  # PostgreSQL database
-  db_test:
-    restart: always
-    image: dgnest/postgis:9.6
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=single-store_test
-    env_file:
-      - .env
-    volumes:
-      - single-store-db-test:/var/lib/postgresql/data #using the declared volume
-
-  # Django web server
-  web:
-    restart: always
-    image: python:3.6.1
+  app:
+    image: ansible-role-postgresql-app-test
     environment: &environment
-      - BASE_URL=/
-      - MEDIA_URL=media/
-      - STATIC_URL=static/
-      - DB_URL=postgis://postgres:postgres@db:5432/single-store_test
-      - SECRET_KEY=j36%5df7q5+ov)wz+(=vt7d81ka^xx!5%0)nx=z2i&)*5r^
-      - DEBUG=True
+      - STAGE=testing
     build:
-      context: .
-      dockerfile: provision/docker/web/Dockerfile
-    env_file:
-      - .env
-
-volumes:
-  single-store-db-test:
-    external:
-      name: single-store-db-test
+      args:
+        stage: test

@@ -1,24 +1,16 @@
 # Docker Compose
 # https://docs.docker.com/compose/
 # Usage: docker-compose up
-
-version: '3'
+---
+version: "3"
 services:
 
-  # Django web server.
-  web:
-    hostname: web
-    ports:
-      - "80:8000"
-      - "8080:5000"
-      - "8000:8000"
-    restart: always
-    image: python:3.6.1
-    environment: &environment
-      - ENVIRONMENT=local
+  app:
     build:
       context: .
-      dockerfile: provision/docker/web/Dockerfile
+      dockerfile: provision/docker/app/Dockerfile
+    environment: &environment
+      - STAGE=local
     volumes:
       - .:/usr/src
     env_file:
