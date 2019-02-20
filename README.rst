@@ -3,6 +3,12 @@ Ansible Role for PostgreSQL
 
 |Build Status| |GitHub issues| |GitHub license|
 
+:Version: 0.1.1
+:Web: https://github.com/hadenlabs/ansible-role-postgresql
+:Download: http://github.com/hadenlabs/ansible-role-postgresql
+:Source: http://github.com/hadenlabs/ansible-role-postgresql
+:Keywords: ansible-role-postgresql
+
 A role for deploying and configuring
 `PostgreSQL <http://www.postgresql.org/>`__ and extensions on unix hosts
 using `Ansible <http://www.ansibleworks.com/>`__ It can additionally be
