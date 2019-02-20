@@ -61,6 +61,8 @@ Enabled Postgis
 
     postgresql_postgis: yes
 
+
+
 Dependencies
 ------------
 
@@ -87,6 +89,26 @@ To install a specific version:
     - hosts: servers
       roles:
          - { role: hadenlabs.postgresql }
+
+To make generate backup:
+
+.. code-block:: yaml
+
+    postgresql_backups:
+      - name: "{{ postgresql_database_name }}"
+        user: "{{ postgresql_user }}"
+        pass: "{{ postgresql_pass }}"
+        host: "127.0.0.1"
+        bucket: "{{ aws_bucket_backup }}"
+        bucket_path: "{{ application_stage }}"
+        user_system: "{{ user }}"
+
+.. code-block:: yaml
+
+    - hosts: servers
+      roles:
+        - role: hadenlabs.postgresql
+           backup_only: yes
 
 Support
 -------
