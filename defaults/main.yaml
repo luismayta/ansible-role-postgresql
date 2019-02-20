@@ -611,3 +611,5 @@ postgresql_postgis: no
 # If enabled, this will install the development headers.
 
 postgresql_dev_headers: no
+
+postgresql_backups: []
