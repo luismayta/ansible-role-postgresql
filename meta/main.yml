@@ -1,4 +1,5 @@
 ---
+
 galaxy_info:
   author: Luis Mayta
   description: A role for installing and configuring PostgreSQL
@@ -16,6 +17,5 @@ galaxy_info:
 
   categories:
     - database
-    - database:sql
 
 dependencies: []

@@ -3,7 +3,7 @@
 - name: Install Dependences PostgreSQL
   become: true
   package:
-    name: "{{item}}"
+    name: "{{ item }}"
     state: present
   with_items: "{{ _postgresql_dependences | default([]) }}"
   when:
@@ -12,3 +12,11 @@
     - postgresql
     - db
     - deps
+
+- name: Install packages via pip
+  become: true
+  pip: name="{{ item }}"
+  when: _postgresql_pip_packages is defined
+  with_items: "{{ _postgresql_pip_packages | default([]) }}"
+  tags:
+    - backup

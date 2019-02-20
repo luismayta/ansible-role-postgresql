@@ -6,7 +6,7 @@
 
 - name: Install development headers
   when:
-    - postgresql_dev_headers == True
+    - not postgresql_dev_headers
   become: true
   package:
     name: libpq-dev
@@ -25,7 +25,7 @@
   when: postgresql_contrib
   become: true
   apt:
-    name: "postgresql-contrib-{{postgresql_version}}"
+    name: "postgresql-contrib-{{ postgresql_version }}"
   notify: restart postgresql
   tags:
     - postgresql
@@ -39,7 +39,7 @@
 - name: Add postgis extensions
   become: true
   package:
-    name: "{{item}}"
+    name: "{{ item }}"
     state: present
   with_items: "{{ _postgresql_dependences_postgis | default([]) }}"
   when:
