@@ -1,0 +1,37 @@
+---
+language: python
+dist: xenial
+services: docker
+python:
+  - "3.5"
+  - "3.6"
+  - "3.7"
+
+env:
+  global:
+    - ROLE_NAME: python
+  matrix:
+    - TOX_ENV: ansible26-xenial
+    - TOX_ENV: ansible26-bionic
+    - TOX_ENV: ansible27-xenial
+    - TOX_ENV: ansible27-bionic
+    - TOX_ENV: ansible28-xenial
+    - TOX_ENV: ansible28-bionic
+
+install:
+  # Install test dependencies.
+  - make setup
+  - pip install -r requirements/test.txt
+
+before_script:
+  # Use actual Ansible Galaxy role name for the project directory.
+  - cd ../
+  - mv ansible-role-$ROLE_NAME equipindustry.$ROLE_NAME
+  - cd equipindustry.$ROLE_NAME
+
+
+script:
+  - tox -e $TOX_ENV
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
