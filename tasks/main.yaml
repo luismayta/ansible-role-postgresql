@@ -1,0 +1,41 @@
+---
+
+- include: dependences.yaml
+  when:
+    - backup_only is not defined
+  tags:
+    - install
+- include: install.yaml
+  when:
+    - backup_only is not defined
+  tags:
+    - install
+- include: extensions.yaml
+  when:
+    - backup_only is not defined
+  tags:
+    - install
+- include: configure.yaml
+  when:
+    - backup_only is not defined
+  tags:
+    - install
+- include: databases.yaml
+  when:
+    - backup_only is not defined
+  tags:
+    - install
+- include: users.yaml
+  when:
+    - backup_only is not defined
+  tags:
+    - install
+- include: tools.yaml
+  with_items: "{{ postgresql_backups }}"
+  loop_control:
+    loop_var: backup_item
+  when:
+    - postgresql_backups is defined
+    - backup_only is defined
+  tags:
+    - backup

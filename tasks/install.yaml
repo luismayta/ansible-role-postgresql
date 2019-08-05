@@ -1,0 +1,42 @@
+---
+
+# Official PostgreSQL [repository] for debian-based distributions
+# [repository]: http://www.postgresql.org/download/
+
+- name: Adding APT repository key
+  when: ansible_os_family == 'Debian'
+  become: true
+  become_user: root
+  apt_key:
+    id: ACCC4CF8
+    url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
+  tags:
+    - postgresql
+    - db
+    - repo
+
+- name: Add PostgreSQL official APT repository
+  when:
+    - ansible_os_family == 'Debian'
+  become: true
+  become_user: root
+  apt_repository:
+    repo: "deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main"
+  tags:
+    - postgresql
+    - db
+    - repo
+
+- name: Install PostgreSQL
+  when:
+    - ansible_os_family == 'Debian'
+  become: true
+  become_user: root
+  package:
+    name: "postgresql-{{ postgresql_version }}"
+    state: present
+  notify: restart postgresql
+  tags:
+    - postgresql
+    - db
+    - deps
