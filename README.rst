@@ -9,6 +9,9 @@ Ansible Role for PostgreSQL
 :Source: http://github.com/equipindustry/ansible-role-postgresql
 :Keywords: ansible-role-postgresql
 
+.. contents:: Table of Contents:
+    :local:
+
 A role for deploying and configuring
 `PostgreSQL <http://www.postgresql.org/>`__ and extensions on unix hosts
 using `Ansible <http://www.ansibleworks.com/>`__ It can additionally be
@@ -72,7 +75,7 @@ Enabled Postgis
 Dependencies
 ------------
 
-none
+None
 
 Example Playbook
 ----------------
@@ -138,7 +141,10 @@ Team
 License
 -------
 
-MIT
+The code in this repository is licensed under the Apache unless
+otherwise noted.
+
+Please see LICENSE_ for details.
 
 Changelog
 ---------
@@ -147,14 +153,18 @@ Please see `CHANGELOG`_ for more information what
 has changed recently.
 
 Contributing
-------------
+============
 
-Contributions are welcome!
+Please see `CONTRIBUTING`_ for details.
 
-Review the `CONTRIBUTING`_ for details on how to:
 
-* Submit issues
-* Submit pull requests
+Versioning
+----------
+
+Releases are managed using bitbucket release feature. We use [Semantic Versioning](http://semver.org) for all
+the releases. Every change made to the code base will be referred to in the release notes (except for
+cleanups and refactorings).
+
 
 Contact Info
 ------------
@@ -168,7 +178,7 @@ Feel free to contact me to discuss any issues, questions, or comments.
 * `Website`_
 * `PGP`_
 
-|linkedin| |beacon| |made|
+|linkedin| |beacon|
 
 Made with :coffee: and :pizza: by `luis mayta`_ and `equipindustry`_.
 
@@ -176,6 +186,7 @@ Made with :coffee: and :pizza: by `luis mayta`_ and `equipindustry`_.
 .. _`changelog`: CHANGELOG.rst
 .. _`contributors`: AUTHORS
 .. _`contributing`: CONTRIBUTING.rst
+.. _`LICENSE`: LICENSE
 
 .. _`equipindustry`: https://github.com/equipindustry
 .. _`luis mayta`: https://github.com/luismayta
@@ -212,11 +223,9 @@ Made with :coffee: and :pizza: by `luis mayta`_ and `equipindustry`_.
    :target: http://pe.linkedin.com/in/luismayta
 .. |beacon| image:: https://ga-beacon.appspot.com/UA-65019326-1/github.com/equipindustry/ansible-role-postgresql/readme
    :target: https://github.com/equipindustry/ansible-role-postgresql
-.. |made| image:: https://img.shields.io/badge/Made%20with-Zsh-1f425f.svg
-   :target: http://www.zsh.org
 
-.. Dependences:
-
-.. _Python 3.6.4: https://www.python.org/downloads/release/python-364
+.. dependences
+.. _Python: https://www.python.org
+.. _Pyenv: https://github.com/pyenv/pyenv
 .. _Docker: https://www.docker.com/
 .. _Docker Compose: https://docs.docker.com/compose/
