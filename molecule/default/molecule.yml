@@ -1,0 +1,36 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint:
+  name: yamllint
+platforms:
+  - name: instance
+    image: ubuntu:16.04
+    privileged: true
+provisioner:
+  name: ansible
+  connection_options:
+    ansible_become: yes
+  lint:
+    name: ansible-lint
+verifier:
+  name: testinfra
+  options:
+    sudo: true
+  lint:
+    name: flake8
+
+scenario:
+  name: default
+  test_sequence:
+    - destroy
+    - syntax
+    - create
+    - prepare
+    - converge
+    - lint
+    - side_effect
+    - verify
+    - destroy
