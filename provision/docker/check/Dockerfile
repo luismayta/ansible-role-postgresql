@@ -1,4 +1,4 @@
-FROM python:3.7.3
+FROM python:3.7.3-slim
 
 MAINTAINER Luis Mayta <@slovacus>
 
@@ -6,7 +6,7 @@ ARG stage
 ARG version
 LABEL NAME ansible-role-postgresql-check-$stage
 
-COPY Pipfile Pipfile.lock /usr/src/
+COPY Pipfile* /usr/src/
 
 # set working directory to /usr/src/
 WORKDIR /usr/src/
@@ -18,7 +18,7 @@ RUN apt-get update -y \
   shellcheck \
   # install python dependencies
   && pip3 install pipenv \
-  && pipenv install --dev \
+  && pipenv install --dev --skip-lock \
   && apt-get purge \
   && apt-get autoremove -y \
   && rm -rf /var/lib/apt/lists/*
