@@ -34,7 +34,7 @@ test.validate: clean
 	$(docker_test) run --rm $(DOCKER_SERVICE) bash -c "pipenv run py.test --dead-fixtures"
 
 test.lint: clean
-	pre-commit run --all-files --verbose
+	$(PIPENV_RUN) pre-commit run --all-files --verbose
 
 test.lint.docker: clean
 	$(docker-compose) -f ${PATH_DOCKER_COMPOSE}/dev.yml \
