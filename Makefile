@@ -51,6 +51,7 @@ help:
 	@echo ''
 	@make alias.help
 	@make docker.help
+	@make docs.help
 	@make test.help
 
 clean:
