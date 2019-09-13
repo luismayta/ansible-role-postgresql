@@ -1,6 +1,6 @@
 # ~/.tmuxinator/ansible-role-postgresql.yml
 name: ansible-role-postgresql
-root: <%= ENV["PROJECTS"] %>/ansible/roles/ansible-role-postgresql
+root: ./
 # Optional tmux socket
 # socket_name: foo
 
