@@ -155,6 +155,11 @@
   dependencies:
     find-up "^4.0.0"
 
+"@equipindustry/prettierrc@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@equipindustry/prettierrc/-/prettierrc-0.1.0.tgz#5960c9b77f284ea894467456f0227224a3335923"
+  integrity sha512-MQNW4aVCyWV/b7fV9Ymz9pPlTnRwonrWDC68uMnBdilW6FwxjjmKh+a/AWseJfpf1wP2gbIrDRoQ+6HhEANXxg==
+
 "@iarna/cli@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@iarna/cli/-/cli-1.2.0.tgz#0f7af5e851afe895104583c4ca07377a8094d641"
