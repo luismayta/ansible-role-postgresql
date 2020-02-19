@@ -1,5 +1,4 @@
 ---
-
 # Official PostgreSQL [repository] for debian-based distributions
 # [repository]: http://www.postgresql.org/download/
 
@@ -21,7 +20,7 @@
   become: true
   become_user: root
   apt_repository:
-    repo: "deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main"
+    repo: 'deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main'
   tags:
     - postgresql
     - db
@@ -33,7 +32,7 @@
   become: true
   become_user: root
   package:
-    name: "postgresql-{{ postgresql_version }}"
+    name: 'postgresql-{{ postgresql_version }}'
     state: present
   notify: restart postgresql
   tags:
