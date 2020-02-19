@@ -16,5 +16,5 @@ _postgresql_dependences_postgis:
   - libgeos-3.5.0
   - libgeos-dev
   - postgis
-  - postgresql-{{postgresql_version}}-postgis-2.4
+  - postgresql-{{postgresql_version}}-postgis-2.5
   - postgresql-{{postgresql_version}}-pgrouting
