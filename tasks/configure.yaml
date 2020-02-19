@@ -1,18 +1,17 @@
 ---
-
 - name: Create the necessary directories
   become: true
   become_user: root
   file:
-    dest: "{{ item }}"
+    dest: '{{ item }}'
     state: directory
-    owner: "{{ postgresql_admin_user }}"
-    group: "{{ postgresql_admin_group }}"
+    owner: '{{ postgresql_admin_user }}'
+    group: '{{ postgresql_admin_group }}'
   with_items:
-    - "{{ postgresql_conf_directory }}"
-    - "{{ postgresql_data_directory }}"
-    - "{{ postgresql_runtime_directory }}"
-    - "{{ postgresql_log_directory }}"
+    - '{{ postgresql_conf_directory }}'
+    - '{{ postgresql_data_directory }}'
+    - '{{ postgresql_runtime_directory }}'
+    - '{{ postgresql_log_directory }}'
   tags:
     - postgresql
     - db
@@ -22,9 +21,9 @@
   become: true
   become_user: root
   template:
-    src: "{{ item.src }}"
-    dest: "{{ item.dest }}"
-  with_items: "{{ postgresql_conf_templates | default({}) }}"
+    src: '{{ item.src }}'
+    dest: '{{ item.dest }}'
+  with_items: '{{ postgresql_conf_templates | default({}) }}'
   when:
     - postgresql_conf_templates is defined
   notify: restart postgresql
@@ -38,7 +37,7 @@
   become_user: root
   template:
     src: pg_hba.conf.j2
-    dest: "{{ postgresql_hba_file }}"
+    dest: '{{ postgresql_hba_file }}'
   notify: restart postgresql
   tags:
     - postgresql
@@ -50,7 +49,7 @@
   become_user: root
   template:
     src: pg_ident.conf.j2
-    dest: "{{ postgresql_ident_file }}"
+    dest: '{{ postgresql_ident_file }}'
   when:
     - postgresql_ident_file is defined
   notify: restart postgresql
