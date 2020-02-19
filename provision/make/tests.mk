@@ -20,23 +20,23 @@ test:
 		$(docker_test) run --rm $(DOCKER_SERVICE) bash -c "pipenv run py.test ${run}";\
 	fi
 
-test.all: clean
+test.all:
 	@echo $(MESSAGE) Running tests on the current Python interpreter with coverage $(END)
 	$(docker_test) run --rm $(DOCKER_SERVICE) bash -c "pipenv run py.test"
 
-test.picked: clean
+test.picked:
 	$(docker_test) run --rm $(DOCKER_SERVICE) bash -c "pipenv run py.test --picked"
 
-test.validate: clean
+test.validate:
 	@echo $(MESSAGE) Running tests validation fixture $(END)
 	$(docker_test) run --rm $(DOCKER_SERVICE) bash -c "pipenv run py.test --dead-fixtures"
 
-test.lint: clean
+test.lint:
 	$(PIPENV_RUN) pre-commit run --all-files --verbose
 
-test.lint.docker: clean
+test.lint.docker:
 	$(docker-compose) -f ${PATH_DOCKER_COMPOSE}/dev.yml \
 		run --rm check sh -c "pipenv run pre-commit run --all-files --verbose"
 
-test.syntax: clean
+test.syntax:
 	@echo $(MESSAGE) Running tests $(END)
