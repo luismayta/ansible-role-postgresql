@@ -135,7 +135,7 @@ Team
 +---------------+
 | |Luis Mayta|  |
 +---------------+
-| `luis mayta`_ |
+| `Luis Mayta`_ |
 +---------------+
 
 License
@@ -190,6 +190,7 @@ Made with :coffee: and :pizza: by `luis mayta`_ and `equipindustry`_.
 
 .. _`equipindustry`: https://github.com/equipindustry
 .. _`luis mayta`: https://github.com/luismayta
+
 
 .. _`Github`: https://github.com/luismayta
 .. _`Linkedin`: https://www.linkedin.com/in/luismayta
