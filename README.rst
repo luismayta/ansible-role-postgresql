@@ -24,6 +24,8 @@ Supports
 
 Supported PostgreSQL versions:
 
+-  PostgreSQL 11
+-  PostgreSQL 10
 -  PostgreSQL 9.6
 -  PostgreSQL 9.5
 -  PostgreSQL 9.4
