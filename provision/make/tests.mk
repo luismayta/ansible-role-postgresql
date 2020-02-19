@@ -1,5 +1,3 @@
-docker_test=$(docker-compose) -f ${PATH_DOCKER_COMPOSE}/test.yml
-
 test.help:
 	@echo '    Tests:'
 	@echo ''
@@ -13,7 +11,7 @@ test.help:
 	@echo '        test.validate             Run all validation fixture dead in code'
 	@echo ''
 
-test: clean
+test:
 	@echo $(MESSAGE) Running tests on the current Python interpreter with coverage $(END)
 	@if [ -z "${run}" ]; then \
 		make test.help;\
