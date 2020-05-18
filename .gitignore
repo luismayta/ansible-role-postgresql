@@ -1,9 +1,11 @@
 
-# Created by https://www.gitignore.io/api/terraform,python,node,ansible
-# Edit at https://www.gitignore.io/?templates=terraform,python,node,ansible
+# Created by https://www.gitignore.io/api/terraform,python,node,ansible,bash
+# Edit at https://www.gitignore.io/?templates=terraform,python,node,ansible,bash
 
 ### Ansible ###
 *.retry
+
+#!! ERROR: bash is undefined. Use list command to see defined gitignore types !!#
 
 ### Node ###
 # Logs
@@ -244,4 +246,4 @@ override.tf.json
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
 # example: *tfplan*
 
-# End of https://www.gitignore.io/api/terraform,python,node,ansible
+# End of https://www.gitignore.io/api/terraform,python,node,ansible,bash
