@@ -11,7 +11,7 @@
     "clean:all": "yarn clean node_modules",
     "lint": "eslint -c .eslintrc.js ./ --ext .js,.jsx,.mjs,.d.ts,.ts,.tsx",
     "lint:fix": "yarn lint --fix",
-    "prettier": "prettier '**/*.{js?(on),ts?(x),jsx,less,scss,md?(x),y(a)ml}' --write=false --list-different",
+    "prettier": "prettier '**/*.{js?(on),ts?(x),jsx,less,scss,md?(x),yml,yaml}' --write=false --list-different",
     "prettier:fix": "yarn prettier --write=true",
     "precommit": "lint-staged"
   },
