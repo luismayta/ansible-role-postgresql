@@ -3,6 +3,8 @@ Ansible Role for PostgreSQL
 
 |Build Status| |GitHub issues| |GitHub license|
 
+postgresql for ansible
+
 :Version: 0.0.0
 :Web: https://github.com/equipindustry/ansible-role-postgresql
 :Download: http://github.com/equipindustry/ansible-role-postgresql
@@ -155,10 +157,11 @@ Please see `CHANGELOG`_ for more information what
 has changed recently.
 
 Contributing
-============
+------------
 
-Please see `CONTRIBUTING`_ for details.
+Contributions are welcome!
 
+Review the `CONTRIBUTING`_ for details on how to:
 
 Versioning
 ----------
@@ -182,24 +185,24 @@ Feel free to contact me to discuss any issues, questions, or comments.
 
 |linkedin| |beacon|
 
-Made with :coffee: and :pizza: by `luis mayta`_ and `equipindustry`_.
+Made with :coffee: and :pizza: by `Luis Mayta`_ and `equipindustry`_.
 
 .. Links
 .. _`changelog`: CHANGELOG.rst
-.. _`contributors`: AUTHORS
-.. _`contributing`: CONTRIBUTING.rst
+.. _`contributors`: docs/source/AUTHORS.rst
+.. _`contributing`: docs/source/CONTRIBUTING.rst
 .. _`LICENSE`: LICENSE
 
 .. _`equipindustry`: https://github.com/equipindustry
-.. _`luis mayta`: https://github.com/luismayta
+.. _`Luis Mayta`: https://github.com/luismayta
 
 
 .. _`Github`: https://github.com/luismayta
-.. _`Linkedin`: https://www.linkedin.com/in/luismayta
+.. _`Linkedin`: https://pe.linkedin.com/in/luismayta
 .. _`Email`: slovacus@gmail.com
     :target: mailto:slovacus@gmail.com
 .. _`Twitter`: https://twitter.com/slovacus
-.. _`Website`: http://luismayta.github.io
+.. _`Website`: https://luismayta.github.io
 .. _`PGP`: https://keybase.io/luismayta/pgp_keys.asc
 
 .. |Build Status| image:: https://travis-ci.org/equipindustry/ansible-role-postgresql.svg
@@ -223,12 +226,11 @@ Made with :coffee: and :pizza: by `luis mayta`_ and `equipindustry`_.
 
 .. Footer:
 .. |linkedin| image:: http://www.linkedin.com/img/webpromo/btn_liprofile_blue_80x15.png
-   :target: http://pe.linkedin.com/in/luismayta
+   :target: https://pe.linkedin.com/in/luismayta
 .. |beacon| image:: https://ga-beacon.appspot.com/UA-65019326-1/github.com/equipindustry/ansible-role-postgresql/readme
    :target: https://github.com/equipindustry/ansible-role-postgresql
 
-.. dependences
-.. _Python: https://www.python.org
+.. Dependences:
+
 .. _Pyenv: https://github.com/pyenv/pyenv
 .. _Docker: https://www.docker.com/
-.. _Docker Compose: https://docs.docker.com/compose/
