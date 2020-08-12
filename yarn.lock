@@ -267,7 +267,7 @@
     prettier "^2.0.5"
     pretty-quick "^2.0.1"
 
-"@equipindustry/prettierrc@^0.2.0":
+"@equipindustry/prettierrc@^0.3.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@equipindustry/prettierrc/-/prettierrc-0.2.0.tgz#75c642eb2237f2f50dfe22500b58a94d465d7e61"
   integrity sha512-4k99NQpQ5efQBlWyOWSOi4Tfr25XzcZABI1Pdli3etSx0AN3Dh4mejLwPZXTLu2v0y3YwzQvSjYCaWgkPVHO6w==
