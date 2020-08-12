@@ -7,7 +7,7 @@
   "author": "Luis Mayta <slovacus@gmail.com>",
   "license": "MIT",
   "stylintrc": ".stylintrc",
-  "version": "0.0.0",
+  "version": "0.3.0",
   "scripts": {
     "clean": "rimraf -rf dist",
     "clean:cache": "yarn clean ./node_modules/.cache",
@@ -37,7 +37,7 @@
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "@equipindustry/eslint-config": "^0.3.4",
-    "@equipindustry/prettierrc": "^0.2.0",
+    "@equipindustry/prettierrc": "^0.3.0",
     "@typescript-eslint/eslint-plugin": "^2.31.0",
     "@typescript-eslint/parser": "^2.31.0",
     "babel": "^6.23.0",

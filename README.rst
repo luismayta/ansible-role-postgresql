@@ -5,7 +5,7 @@ Ansible Role for PostgreSQL
 
 postgresql for ansible
 
-:Version: 0.0.0
+:Version: 0.3.0
 :Web: https://github.com/equipindustry/ansible-role-postgresql
 :Download: http://github.com/equipindustry/ansible-role-postgresql
 :Source: http://github.com/equipindustry/ansible-role-postgresql
