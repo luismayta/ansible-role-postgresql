@@ -1,0 +1,51 @@
+---
+# Development headers and libraries
+# ---------------------------------
+
+- name: Install development headers
+  when:
+    - not postgresql_dev_headers
+  become: true
+  become_user: root
+  package:
+    name: libpq-dev
+    state: present
+  tags:
+    - postgresql
+    - db
+    - deps
+    - dev
+
+# Contributed extensions
+# ----------------------
+
+- name: Install PostgreSQL contribs
+  when: postgresql_contrib
+  become: true
+  become_user: root
+  apt:
+    name: 'postgresql-contrib-{{ postgresql_version }}'
+  notify: restart postgresql
+  tags:
+    - postgresql
+    - db
+    - deps
+
+# PostGIS
+# -------
+
+- name: Add postgis extensions
+  become: true
+  become_user: root
+  package:
+    name: '{{ item }}'
+    state: present
+  with_items: '{{ _postgresql_dependences_postgis | default([]) }}'
+  when:
+    - postgresql_postgis
+    - _postgresql_dependences_postgis is defined
+  notify: restart postgresql
+  tags:
+    - postgresql
+    - db
+    - deps

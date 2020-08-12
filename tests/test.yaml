@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  connection: local
+  vars:
+    example_var: { 'key': 'value' }
+  roles:
+    - { role: ansible-role-postgresql }

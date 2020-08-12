@@ -1,0 +1,52 @@
+---
+- debug: var=backup_item
+  tags:
+    - backup
+
+- name: Output
+  debug:
+    msg: '{{ backup_item.name }}'
+  tags:
+    - backup
+
+- block:
+    - name: Install Dependences PostgreSQL
+      package:
+        name: python-pip
+        state: present
+
+    - name: Install packages via pip
+      pip: name=boto3
+
+    - postgresql_db:
+        name: '{{ backup_item.name }}'
+        state: dump
+        login_user: '{{ backup_item.user }}'
+        login_password: '{{ backup_item.pass }}'
+        login_host: '{{ backup_item.host }}'
+        target: /var/tmp/{{ backup_item.name }}-{{ ansible_date_time.date }}.sql.gz
+
+    - name: create temporary backup database
+      stat:
+        path: /var/tmp/{{ backup_item.name }}-{{ ansible_date_time.date }}.sql.gz
+      register: backup
+
+    - aws_s3:
+        bucket: '{{ backup_item.bucket }}'
+        object: /{{ backup_item.bucket_path }}/
+        mode: create
+      when:
+        - backup_item.bucket_path is defined
+
+    - name: test putting an object in the bucket
+      aws_s3:
+        bucket: '{{ backup_item.bucket }}'
+        mode: put
+        src: '{{ backup.stat.path }}'
+        object: /{{ backup_item.bucket_path }}/{{ backup_item.name }}-{{ ansible_date_time.date }}.sql.gz
+      retries: 3
+      delay: 3
+      register: result
+  become_user: '{{ backup_item.user_system }}'
+  tags:
+    - backup

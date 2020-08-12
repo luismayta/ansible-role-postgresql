@@ -1,0 +1,26 @@
+# Docker Compose
+# https://docs.docker.com/compose/
+
+version: '3.6'
+services:
+  # Python
+  app:
+    environment: &environment
+      - STAGE=dev
+    image: ansible-role-postgresql-app-dev
+    build:
+      args:
+        stage: dev
+
+  check:
+    image: ansible-role-postgresql-check-dev
+    environment: *environment
+    build:
+      context: .
+      dockerfile: provision/docker/check/Dockerfile
+      args:
+        stage: dev
+    volumes:
+      - .:/usr/src
+    env_file:
+      - .env
